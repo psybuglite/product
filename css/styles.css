@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black|Poppins");
+/****** Style Star Rating Widget *****/
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label:before {
+  margin: 5px;
+  font-size: 1em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.rating > input:checked ~ label {
+  color: #FFD700;
+}
+
+/* show gold star when clicked */
+.rating:not(:checked) > label:hover {
+  color: #FFD700;
+}
+
+/* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+/* hover previous stars in list */
+.rating > input:checked + label:hover {
+  color: #FFED85;
+}
+
+/* hover current star when changing rating */
+.rating > input:checked ~ label:hover {
+  color: #FFED85;
+}
+
+.rating > label:hover ~ input:checked ~ label {
+  color: #FFED85;
+}
+
+/* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}
+
+* {
+  margin: 0;
+  padidng: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+* .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+* .pop-back {
+  background-color: #d9e0e6;
+  color: #999;
+}
+
+* .pop-back .pop {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+* .pop-back .pop .pop-text {
+  float: left;
+  width: 98%;
+  text-align: center;
+}
+
+* .pop-back .pop .pop-text P {
+  font-size: 0.6rem;
+  padding: 4px;
+}
+
+* .pop-back .pop .pop-close {
+  float: left;
+}
+
+* .pop-back .pop .pop-close:hover {
+  cursor: pointer;
+}
+
+* header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+
+* header .heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+* header .heading .currency, * header .heading .cart {
+  width: 100px;
+}
+
+* header .heading .bonfire {
+  font-weight: bolder;
+}
+
+* header .heading .cart button {
+  padding: 6px 24px;
+  border: 2px solid #bbad71;
+  background-color: white;
+  font-size: 0.7rem;
+}
+
+* header .heading .cart button:hover {
+  cursor: pointer;
+}
+
+* header .heading .currency .dropdown .dropbtn {
+  font-size: 12px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 10px 12px;
+  background-color: inherit;
+}
+
+* header .heading .currency .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+* header .heading .currency .dropdown-content a {
+  font-size: 12px;
+  float: none;
+  color: black;
+  padding: 5px 8px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+* header .heading .currency .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+* header .heading .currency .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+* nav {
+  border-top: 1px solid #d9e0e6;
+  border-bottom: 1px solid #d9e0e6;
+}
+
+* nav .main-nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+
+* nav .main-nav .nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+* nav .main-nav .nav .menu, * nav .main-nav .nav .las {
+  width: 100px;
+}
+
+* nav .main-nav .nav .menu:hover {
+  cursor: pointer;
+}
+
+* nav .main-nav .nav .las {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+
+* nav .main-nav .nav .las .heart {
+  padding: 0px 24px;
+  border-right: 1px solid #999999;
+}
+
+* nav .main-nav .nav .las .heart i:hover, * nav .main-nav .nav .las .search i:hover {
+  cursor: pointer;
+}
+
+* nav .main-nav .nav .las .search {
+  padding: 0px 14px;
+  display: flex;
+}
+
+* nav .main-nav .nav .las .search .search-input input {
+  width: 10px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+* nav .main-nav .nav .las .search input[type=search]:hover {
+  width: 100px;
+  border-bottom: 1px solid #999;
+  transition: 0.5s;
+}
+
+* nav .main-nav .nav .navlist {
+  display: flex;
+  justify-content: center;
+}
+
+* nav .main-nav .nav .navlist .dropdown .dropbtn {
+  font-size: 12px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 5px 12px;
+  background-color: inherit;
+}
+
+* nav .main-nav .nav .navlist .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+* nav .main-nav .nav .navlist .dropdown-content a, * nav .main-nav .nav .navlist a {
+  font-size: 12px;
+  float: none;
+  color: black;
+  padding: 5px 26px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+* nav .main-nav .nav .navlist .dropdown-content a:hover, * nav .main-nav .nav .navlist a:hover {
+  background-color: #ddd;
+}
+
+* nav .main-nav .nav .navlist .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+* section {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  padding: 30px 0px;
+}
+
+* section .main {
+  width: 60%;
+  padding: 10px;
+}
+
+* section .main .main-big {
+  height: 620px;
+  background-color: #d9e0e6;
+}
+
+* section .main .other-main {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+* section .main .other-main .main-small {
+  height: 150px;
+  width: 22%;
+  background-color: #d9e0e6;
+}
+
+* section .aside {
+  width: 40%;
+  padding: 10px;
+}
+
+* section .aside .back {
+  font-size: 14px;
+  padding: 10px 0px;
+}
+
+* section .aside .back a {
+  text-decoration: none;
+  color: #6a899b;
+}
+
+* section .aside .back i {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+* section .aside h3 {
+  padding: 30px 0px 10px 0px;
+}
+
+* section .aside .reviews {
+  display: flex;
+}
+
+* section .aside .reviews .rating {
+  padding: 0px;
+}
+
+* section .aside .reviews .rev-num {
+  font-size: 14px;
+  padding: 3px 10px;
+}
+
+* section .aside .reviews .rev-add a {
+  font-size: 12px;
+  padding: 3px 0px 3px 10px;
+  color: black;
+  border-left: 1px solid #ccc;
+}
+
+* section .aside h4 {
+  padding: 20px 0px;
+  font-size: 24px;
+  color: #6a899b;
+}
+
+* section .aside .available, * section .aside .prod-code, * section .aside .tags {
+  font-size: 12px;
+}
+
+* section .aside .available span, * section .aside .prod-code span, * section .aside .tags span {
+  color: #6a899b;
+}
+
+* section .aside .desc {
+  font-size: 12px;
+  padding: 15px 0px;
+  color: #999;
+}
+
+* section .aside ul {
+  font-size: 12px;
+  padding: 0px 15px;
+  color: #999;
+}
+
+* section .aside .inputs {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px;
+}
+
+* section .aside .inputs p {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+* section .aside .inputs select {
+  padding: 3px;
+  width: 140px;
+  border-color: #999;
+}
+
+* section .aside .inputs input {
+  width: 40px;
+  padding: 3px 3px 3px 15px;
+  border: 1px solid #999;
+}
+
+* section .aside .clear {
+  font-size: 12px;
+  padding: 20px 0px;
+  color: black;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+
+* section .aside .clear:hover {
+  cursor: pointer;
+}
+
+* section .aside .buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+* section .aside .buttons a {
+  font-size: 12px;
+  text-decoration: none;
+}
+
+* section .aside .buttons .add-cart {
+  padding: 15px 55px;
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
+* section .aside .buttons .add-wish {
+  padding: 14px 34px;
+  border: 1px solid black;
+  color: black;
+  transition: 0.5s;
+}
+
+* section .aside .buttons .add-wish:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
+* section .aside .buttons .add-cart:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  transition: 0.5s;
+}
+
+* section .aside .social {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 10px 0px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+* section .aside .social .share {
+  font-size: 12px;
+  font-weight: bolder;
+  padding-right: 30px;
+  padding-top: 6px;
+}
+
+* section .aside .social .facebook a {
+  text-decoration: none;
+}
+
+* section .aside .social .facebook .fa-facebook-official {
+  padding: 5px;
+  background: #3B5998;
+  color: white;
+  border-radius: 3px;
+}
+
+* section .aside .social .facebook .fb-share {
+  padding: 4px 3px;
+  background: #3B5998;
+  color: #ccc;
+  border-radius: 3px;
+}
+
+* section .aside .social .facebook .fb-share:hover {
+  cursor: pointer;
+}
+
+* section .aside .social .twitter a {
+  text-decoration: none;
+}
+
+* section .aside .social .twitter .fa-twitter {
+  background: white;
+  color: #55ACEE;
+  border: 0.5px solid #999;
+  padding: 4.5px;
+  border-radius: 3px;
+}
+
+* section .aside .social .twitter .fa-twitter:hover {
+  cursor: pointer;
+}
+
+* section .aside .social .pinterest a {
+  text-decoration: none;
+}
+
+* section .aside .social .pinterest .fa-pinterest {
+  background: white;
+  color: #cb2027;
+  border: 0.5px solid #999;
+  padding: 4.5px;
+  border-radius: 3px;
+}
+
+* section .aside .social .pinterest .fa-pinterest:hover {
+  cursor: pointer;
+}
+
+* section .aside .social .share-count {
+  padding: 2px 3px;
+  font-size: 10px;
+  color: #cccccc;
+  border: 0.5px solid #ccc;
+  border-radius: 3px;
+}
+
+* footer {
+  text-align: center;
+  font-size: 10px;
+  color: #999;
+  padding: 30px 10px;
+  border-top: 1px solid #d9e0e6;
+}
+ 
+
+ /*# sourceMappingURL= styles.css.map */
